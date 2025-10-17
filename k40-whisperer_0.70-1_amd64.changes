@@ -1,0 +1,27 @@
+Format: 1.8
+Date: Thu, 17 Oct 2024 12:00:00 +0200
+Source: k40-whisperer
+Binary: k40-whisperer
+Built-For-Profiles: noudeb
+Architecture: all
+Version: 0.70-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Scorch <scorch@scorchworks.com>
+Changed-By: Scorch <scorch@scorchworks.com>
+Description:
+ k40-whisperer - K40 Laser Cutter Control Software
+Changes:
+ k40-whisperer (0.70-1) unstable; urgency=medium
+ .
+   * Initial Debian package release
+   * Version 0.70 of K40 Whisperer
+Checksums-Sha1:
+ 455e5816aa7d7585dea4350f77cde2f795582bbc 146460 k40-whisperer_0.70-1_all.deb
+ 9c381a706dbea51914d61914307c8e4a67233387 7547 k40-whisperer_0.70-1_amd64.buildinfo
+Checksums-Sha256:
+ 10965d1874c0b04e3b5587732acef39e11db3e54236b70d038e32ad72594c031 146460 k40-whisperer_0.70-1_all.deb
+ fa04daac81c11c7018d2611bf4f9b8f391545991d20ed0db61f2b067ac472050 7547 k40-whisperer_0.70-1_amd64.buildinfo
+Files:
+ a0629982da9868fe3bd22f9a7e356a63 146460 graphics optional k40-whisperer_0.70-1_all.deb
+ c7b31c7c8d2adb13be093968f0f819e2 7547 graphics optional k40-whisperer_0.70-1_amd64.buildinfo

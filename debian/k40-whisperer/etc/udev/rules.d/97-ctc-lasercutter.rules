@@ -1,0 +1,7 @@
+# udev rules for K40 laser cutter
+# This file should be placed in /etc/udev/rules.d/
+# After installation, users need to be added to the lasercutter group
+# sudo groupadd lasercutter
+# sudo usermod -a -G lasercutter [USERNAME]
+
+SUBSYSTEM=="usb", ATTRS{idVendor}=="1a86", ATTRS{idProduct}=="5512", ENV{DEVTYPE}=="usb_device", MODE="0664", GROUP="lasercutter"

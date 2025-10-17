@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	# No build step needed for pure Python application
+
+override_dh_auto_install:
+	# Install Python files
+	install -d debian/k40-whisperer/usr/share/k40-whisperer
+	cp -r *.py debian/k40-whisperer/usr/share/k40-whisperer/
+	
+	# Install icon
+	install -d debian/k40-whisperer/usr/share/pixmaps
+	cp scorchworks.ico debian/k40-whisperer/usr/share/pixmaps/k40-whisperer.ico
+	
+	# Install desktop file
+	install -d debian/k40-whisperer/usr/share/applications
+	install -m 644 debian/k40-whisperer.desktop debian/k40-whisperer/usr/share/applications/
+	
+	# Install executable wrapper
+	install -d debian/k40-whisperer/usr/bin
+	install -m 755 debian/k40-whisperer-wrapper debian/k40-whisperer/usr/bin/k40-whisperer
+	
+	# Install udev rules
+	install -d debian/k40-whisperer/etc/udev/rules.d
+	install -m 644 debian/97-ctc-lasercutter.rules debian/k40-whisperer/etc/udev/rules.d/
+	
+	# Install documentation
+	install -d debian/k40-whisperer/usr/share/doc/k40-whisperer
+	install -m 644 README_Linux.txt debian/k40-whisperer/usr/share/doc/k40-whisperer/
+	install -m 644 gpl-3.0.txt debian/k40-whisperer/usr/share/doc/k40-whisperer/copyright
+	install -m 644 Change_Log.txt debian/k40-whisperer/usr/share/doc/k40-whisperer/
+
+override_dh_python3:
+	# Skip Python dependency calculation
+
+override_dh_auto_test:
+	# Skip tests
+
+override_dh_auto_clean:
+	rm -rf debian/k40-whisperer
+	rm -rf build

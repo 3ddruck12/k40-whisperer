@@ -1,0 +1,37 @@
+#!/bin/bash
+set -e
+
+# Create lasercutter group if it doesn't exist
+if ! getent group lasercutter > /dev/null; then
+    groupadd lasercutter
+    echo "Created group 'lasercutter'"
+fi
+
+# Reload udev rules
+if [ -x /bin/udevadm ]; then
+    udevadm control --reload-rules
+    udevadm trigger
+fi
+
+# Update desktop database
+if [ -x /usr/bin/update-desktop-database ]; then
+    update-desktop-database -q
+fi
+
+echo ""
+echo "============================================"
+echo "K40 Whisperer has been installed!"
+echo "============================================"
+echo ""
+echo "IMPORTANT: To use the laser cutter, you need to:"
+echo "1. Add your user to the lasercutter group:"
+echo "   sudo usermod -a -G lasercutter \$USER"
+echo ""
+echo "2. Log out and log back in for changes to take effect"
+echo ""
+echo "You can find K40 Whisperer in your applications menu under Graphics"
+echo ""
+
+#DEBHELPER#
+
+exit 0
