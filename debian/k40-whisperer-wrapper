@@ -1,0 +1,5 @@
+#!/bin/bash
+# Wrapper script for K40 Whisperer
+
+cd /usr/share/k40-whisperer
+exec python3 k40_whisperer.py "$@"

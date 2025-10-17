@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=K40 Whisperer
+GenericName=Laser Cutter Control Software
+Comment=Control software for K40 laser cutters
+Icon=/usr/share/pixmaps/k40-whisperer.ico
+Exec=k40-whisperer
+Terminal=false
+Categories=Graphics;VectorGraphics;Engineering;
+Keywords=laser;cutter;engraving;K40;
+StartupNotify=true
